@@ -47,4 +47,10 @@ jobs:
           args: deploy
       env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}      
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}       
+
+    - name: Awesome Client Secret - SSM Parameter
+      uses: chuahongsheng/aws-ssm-parameter@v1.0.0
+      with:
+    - name: Hongsheng-Parameter
+     value: ${{ secrets.AWESOME_CLIENT_SECRET }}   
